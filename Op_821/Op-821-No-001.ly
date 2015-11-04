@@ -66,10 +66,17 @@ lowerStaff =  {
     \layout{ }
     \midi  { \tempo 4 = 70 }
 }
+<<<<<<< HEAD
 
 
 
 
        
+=======
 
+
+
+>>>>>>> 3e7a961b111fb773e5c7811835f045e88a623b7f
+
+       
 
