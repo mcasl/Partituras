@@ -4,13 +4,12 @@
    
 \bookpart {
   \header {
-    title = "Título del libro"
-    subtitle = "Primera parte"
+    title = "160 Eight-Measure Exercises"
+    subtitle = "Op 821"
   }
 }
-\include "Op_821_No_001.ly"
-\bookpart {
-}
+\include "Op_821-lys/Op_821_No_001.ly"
 
-\include "Op_821_No_002.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_002.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_003.ly"
 
