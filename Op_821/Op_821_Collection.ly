@@ -13,8 +13,6 @@
 \bookpart {} \include "Op_821-lys/Op_821_No_002.ly"
 \bookpart {} \include "Op_821-lys/Op_821_No_003.ly"
 \bookpart {} \include "Op_821-lys/Op_821_No_004.ly"
-<<<<<<< HEAD
-=======
 \bookpart {} \include "Op_821-lys/Op_821_No_005.ly"
->>>>>>> b3c995ba46e6e8b07e71ff652fd34a3919072fed
+\bookpart {} \include "Op_821-lys/Op_821_No_006.ly"
 
