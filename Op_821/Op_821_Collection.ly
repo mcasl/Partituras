@@ -16,3 +16,4 @@
 \bookpart {} \include "Op_821-lys/Op_821_No_005.ly"
 \bookpart {} \include "Op_821-lys/Op_821_No_006.ly"
 \bookpart {} \include "Op_821-lys/Op_821_No_007.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_008.ly"
