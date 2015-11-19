@@ -1,5 +1,10 @@
-\version "2.18.2"
+\version "2.16.2"
+%\include "definitions.ily"
 \language "english"
+
+\paper {
+  #(set-paper-size "tabloid")
+}
 
 \header {
     composer	        =       "Field, J."
@@ -32,21 +37,24 @@ global = {
 
 mbreak = { \break  }
 
- 
-pdolce = \markup { \dynamic \italic { dolce } }
-
 
 
          
-pianoUpper = {
-         \tempo "Poco adagio" 
-         a'4 ^ \mf  ( e'8) r fs''4( e''8) r16 gs'( | % 
-         b'4 a'8) r r e''( d''8. cs''16 | % 
-         cs''8 ~ cs''16. b'64 a' a'8 ~ a'16. gs'64 fs' fs'16. e'32 ds' e' fs' gs' a' b' cs'' d'' e'' fs'' b' e'' | % 
-         d''8 cs'') r4 r8 e' fs' <e' gs'> | % 
-%5
-         <cs' e' a'>4 e'8 r cs'' b' a''8. a''16 | % 
-         a''8 gs'' b'' as''32 b'' cs''' b'' e''' ds''' cs''' b'' as'' b'' cs''' b'' e''' ds''' cs''' b'' a'' gs'' fs'' e'' | % 
+RH = {   \set Score.skipTypesetting = ##t
+         \set Score.skipTypesetting = ##f
+         \tempo "Poco adagio"
+         \clef treble \dynamicUp
+a'^3 ^ \mf  ( e'8) r fs''4^4( \> e''8) \! r16  \once \slurDown gs'  ( ^2 | % 1
+\once \stemUp b'4\> a'8) \!r r e''^4[( d''8. cs''16^2 ]                  | % 2
+cs''8^3\> ~ cs''16.\! b'64 a'^1 \dynamicDown  a'8^4 \> ~ a'16. \! gs'64    %
+fs'^2 \> fs'16.^4[ \! \dynamicUp e'32] ds' e'^1 fs' gs'                    %
+a'^1 [ b' cs'' d''!^1 ] e''^ 3[ fs'' b' e''^4] \mbreak                   | % 3
+
+d''8\> cs'')\! r4 r8 \slurUp << {e'^2^.( fs'^.^1^3 <e' gs'>)^.^4} \\ {e' \dim e' d' \!} >>  
+<cs' e' a'>4 e'8 r cs'' b' a''8. a''16                          | % 5
+ a''8 gs'' b'' as''32 b'' cs''' b'' e''' ds''' cs''' b'' as'' b'' cs''' b'' e''' ds''' cs''' b'' a'' gs'' fs'' e'' | % 
+\set Score.skipTypesetting = ##t
+
          ds''8 cs'' cs''16 ds'' e'' fs'' gs''8. a''16 fs''8. e''16 | % 
          e''8 e' gs' fs' e' r b'8. b'16 | % 
          e''4 b'8 r gs''4 fs''8 r16 cs'' | % 
@@ -64,90 +72,20 @@ pianoUpper = {
 
 e''4 a''8  a'32 b' a' gs' a' b' b' cs'' d'' e'' fs'' gs'' a'' as'' b'' bs'' ds''' cs''' b'' a'' gs'' b'' a'' gs'' fs'' e''    
 
-         ds''8 cs'' b' a' gs' gs'' | % 
-         s1*4/4          s          s          s %25
-         s1*4/4          s          s          s          s %30
-         s1*4/4          s          s          s          s %35
-         s1*4/4          s          s          s          s %40
-         s1*4/4          s          s          s          s %45
-         s1*4/4          s          s          s          s %50
-         s1*4/4          s          s          s          s %55
-         s1*4/4          s          s          s          s %60
-         s1*4/4          s          s          s          s %65
-         s1*4/4          s          s          s          s %70
-         s1*4/4          s          s          s          s %75
-         s1*4/4          s          s          s          s %80
-         s1*4/4          s          s          s          s %85
-         s1*4/4          s          s          s          s %90
-         s1*4/4          s          s          s          s %95
-         s1*4/4          s          s          s          s %100
-         s1*4/4          s          s          s          s %105
-         s1*4/4          s          s          s          s %110
-         s1*4/4          s          s          s          s %115
-         s1*4/4          s          s          s          s %120
-         s1*4/4          s          s          s          s %125
-         s1*4/4          s          s          s          s %130
-         s1*4/4          s          s          s          s %135
-         s1*4/4          s          s          s          s %140
-         s1*4/4          s          s          s          s %145
-         s1*4/4          s          s          s          s %150
-         s1*4/4          s          s          s          s %155
-         s1*4/4          s          s          s          s %160
-         s1*4/4          s          s          s          s %165
-         s1*4/4          s          s          s          s %170
-         s1*4/4          s          s          s          s %175
-         s1*4/4          s          s 
+         ds''8 cs'' b' a' gs' gs''  % 
+         s1*24          s          s          s %25
+  
 \bar "|."
                          }
 
 
-tenorPiano = {
-         s1*4/4          s          s          r4 r r8 \voiceTwo e' e' d' | % 
+LH = {  \clef bass
+        a,8^\p  e_4([ cs' a_2)] e, d'^2([ b^4 gs')] | % 
+         fs,8 d'^2[( cs' fs']) cs a^2[( e^ 4 e']) | % 
+         d,8 a^2([ fs b)] gs, b^2([ e d')] | % 
+         a,8 a_3([ e cs'] a) cs'([ b_1 e_2] | % 
 %5
-         s1*4/4          s          s          s          s %10
-         s1*4/4          s          s          s          s %15
-         s1*4/4          s          s          s          s %20
-         s1*4/4          s          s          s          s %25
-         s1*4/4          s          s          s          s %30
-         s1*4/4          s          s          s          s %35
-         s1*4/4          s          s          s          s %40
-         s1*4/4          s          s          s          s %45
-         s1*4/4          s          s          s          s %50
-         s1*4/4          s          s          s          s %55
-         s1*4/4          s          s          s          s %60
-         s1*4/4          s          s          s          s %65
-         s1*4/4          s          s          s          s %70
-         s1*4/4          s          s          s          s %75
-         s1*4/4          s          s          s          s %80
-         s1*4/4          s          s          s          s %85
-         s1*4/4          s          s          s          s %90
-         s1*4/4          s          s          s          s %95
-         s1*4/4          s          s          s          s %100
-         s1*4/4          s          s          s          s %105
-         s1*4/4          s          s          s          s %110
-         s1*4/4          s          s          s          s %115
-         s1*4/4          s          s          s          s %120
-         s1*4/4          s          s          s          s %125
-         s1*4/4          s          s          s          s %130
-         s1*4/4          s          s          s          s %135
-         s1*4/4          s          s          s          s %140
-         s1*4/4          s          s          s          s %145
-         s1*4/4          s          s          s          s %150
-         s1*4/4          s          s          s          s %155
-         s1*4/4          s          s          s          s %160
-         s1*4/4          s          s          s          s %165
-         s1*4/4          s          s          s          s %170
-         s1*4/4          s          s          s          s %175
-         s1*4/4          s          s }
-
-
-bassPiano = {
-         a,8^\p  e( cs' a) e, d'( b gs') | % 
-         fs,8 d'( cs' fs') cs a( e e') | % 
-         d,8 a( fs b) gs, b( e d') | % 
-         a,8 a( e cs') a cs'( b e) | % 
-%5
-         a,8 e cs' a ds fs' b a' | % 
+         a,8) e cs' a ds fs' b a' | % 
          e8 e' b gs' gs \clef treble e' b b' \clef bass | % 
          a,8 e' cs' fs' b, b a ds' | % 
          e,8 gs b a gs r r4 | % 
@@ -197,65 +135,55 @@ bassPiano = {
 %45
          cs,4 r8 r16 r bs' cs''4 r8 r16 | % 
          b'4 r r r8 r16 r | % 
-         e''16 | % 
+         e''16  % 
          s1*4/4          s %50
          s1*4/4          s          s          s          s %55
-         s1*4/4          s          s          s          s %60
-         s1*4/4          s          s          s          s %65
-         s1*4/4          s          s          s          s %70
-         s1*4/4          s          s          s          s %75
-         s1*4/4          s          s          s          s %80
-         s1*4/4          s          s          s          s %85
-         s1*4/4          s          s          s          s %90
-         s1*4/4          s          s          s          s %95
-         s1*4/4          s          s          s          s %100
-         s1*4/4          s          s          s          s %105
-         s1*4/4          s          s          s          s %110
-         s1*4/4          s          s          s          s %115
-         s1*4/4          s          s          s          s %120
-         s1*4/4          s          s          s          s %125
-         s1*4/4          s          s          s          s %130
-         s1*4/4          s          s          s          s %135
-         s1*4/4          s          s          s          s %140
-         s1*4/4          s          s          s          s %145
-         s1*4/4          s          s          s          s %150
-         s1*4/4          s          s          s          s %155
-         s1*4/4          s          s          s          s %160
-         s1*4/4          s          s          s          s %165
-         s1*4/4          s          s          s          s %170
-         s1*4/4          s          s          s          s %175
-         s1*4/4          s          s
+      
+   
 }
 
 
 dynamics = {
-  <> -\dolce
+  <> -"dolce"
+  
+  
 }
 
-pedal = {}
+Pon  =  \sustainOn 
+Poff =  \sustainOff 
+
+pedal = {
+
+s8 \Pon s8 s4 s4  \Pon s4                | % 1
+s4 \Pon s4 \Poff s8 \Pon s4 s8  \Poff    | % 2
+s4 \Pon s4 \Pon s8 \Pon s8 s8  \Poff s8  | % 3
+s4 \Pon s8 \Poff s8 s2                   | % 4
+
+}
 
 
-
+%-------Typeset music and generate midi
 
 \score {
-  <<
-    \new PianoStaff <<
-      \set PianoStaff.instrumentName = \markup \huge \bold "4." 
-      \set PianoStaff.midiInstrument = "acoustic grand"
-      \context Staff = "1" << \context Voice = "pianoUpper" { \clef treble \global \pianoUpper } >>
-      \context Dynamics = "Dynamics_pf" \dynamics
-      \context Staff    = "2" << \context Voice = "tenorPiano"    { \clef bass \global \voiceThree \tenorPiano }
-                                 \context Voice = "bassPiano"     { \clef bass \global \voiceFour  \bassPiano } >>
-      \context Dynamics = "pedal" \pedal
-    >>
+  \new PianoStaff = "PianoStaff_pf" <<
+    \set PianoStaff.instrumentName = \markup \huge \bold "4." 
+    \new Staff    = "Staff_pfUpper" << \global \RH >>
+    \new Dynamics = "Dynamics_pf" \dynamics
+    \new Staff    = "Staff_pfLower" << \global \LH >>
+    \new Dynamics = "pedal" \pedal
   >>
-  \layout {
-  %  \mergeDifferentlyHeadedOn 
-  %  \mergeDifferentlyDottedOn
-  }
-  
-  \midi {}
+  \layout { }
 }
 
+\score {
+  \new PianoStaff = "PianoStaff_pf" <<
+    \set PianoStaff.midiInstrument = "acoustic grand"
+    \new Staff = "Staff_pfUpper" << \global \RH \dynamics \pedal >>
+    \new Staff = "Staff_pfLower" << \global \LH \dynamics \pedal >>
+  >>
+  \midi { \tempo 4 = 110 }
+}
 
-
+  %  \mergeDifferentlyHeadedOn 
+  %  \mergeDifferentlyDottedOn
+ 
