@@ -17,3 +17,8 @@
 \bookpart {} \include "Op_821-lys/Op_821_No_006.ly"
 \bookpart {} \include "Op_821-lys/Op_821_No_007.ly"
 \bookpart {} \include "Op_821-lys/Op_821_No_008.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_009.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_010.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_011.ly"
+\bookpart {} \include "Op_821-lys/Op_821_No_012.ly"
+
